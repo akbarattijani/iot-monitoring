@@ -8,12 +8,11 @@
 		} else if (isset($_POST['UpdateBy'])) {
 			echo 'UpdateBy empty';
 		} else {
-			$EmailAddress = $_POST['EmailAddress'];
+			echo $_POST['UpdateBy'];
 			$UpdateTimeEmail = date("Y-m-d H:i:s");
-			$UpdateBy = $_POST['UpdateBy'];
 
 			//Pembuatan Syntax SQL
-			$sql = "INSERT INTO tbl_email (email_address,update_time,updated_by) VALUES ('$EmailAddress','$UpdateTimeEmail','$UpdateBy')";
+			$sql = "INSERT INTO tbl_email (email_address,update_time,updated_by) VALUES ('$_POST['EmailAddress']','$UpdateTimeEmail','$_POST['UpdateBy']')";
 			//Import File Koneksi databaset
 			require_once('koneksi.php');
 			//Eksekusi Query database
