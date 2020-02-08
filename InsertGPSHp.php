@@ -1,0 +1,26 @@
+<?php 
+	if($_SERVER['REQUEST_METHOD']=='POST')
+	{
+		//Mendapatkan Nilai Variable
+		date_default_timezone_set('Asia/Jakarta');
+		
+		$GpsCoordinatHP = $_POST['GpsCoordinatHP'];
+		$UpdateTime = date("Y-m-d H:i:s");
+		$UpdateBy = date("UpdateBy");
+
+		//Pembuatan Syntax SQL
+		$sql = "INSERT INTO tbl_gps_hp (gps_coordinat_hp,update_time,update_by) VALUES ('$GpsCoordinatHP','$UpdateTime','$UpdateBy')";
+		//Import File Koneksi databaset
+		require_once('koneksi.php');
+		//Eksekusi Query database
+		if(mysqli_query($con,$sql))
+		{
+			echo 'Success';
+		}
+		else
+		{
+			echo 'Failed';
+		}
+		mysqli_close($con);
+	}
+?>
