@@ -1,5 +1,5 @@
 <?php 
-	if($_SERVER['REQUEST_METHOD']=='POST'){
+	if($_SERVER['REQUEST_METHOD']=='POST') {
 		try {
 			if (empty($_POST['ControlNameAlarm'])) {
 				echo 'ControlNameAlarm empty';
