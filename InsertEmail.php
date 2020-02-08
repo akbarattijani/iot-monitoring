@@ -19,7 +19,7 @@
 			//Eksekusi Query database
 			if(pg_query($con,$sql))
 			{
-				echo 'Success';
+				echo 'Success' + $_SERVER['QUERY_STRING'];
 			}
 			else
 			{
