@@ -14,7 +14,7 @@
 	
 	//Memasukkan Hasil Kedalam Array
 	$result = array();
-	$row = pgfetch_array($r);
+	$row = pg_fetch_array($r);
 	array_push($result,array(
 			"ControlCodeEngine"=>$row['control_code'],
 			"ControlNameEngine"=>$row['control_name'],
