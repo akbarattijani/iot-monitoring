@@ -3,8 +3,8 @@
 		try {
 			if (empty($_POST['ControlNameEngine'])) {
 				echo 'ControlNameEngine empty';
-			} else if (empty($_POST['ControlStatusEngine'])) {
-				echo 'ControlStatusEngine empty';
+			} else if (empty($_POST['ControlNameEngine'])) {
+				echo 'ControlNameEngine empty';
 			} else if (empty($_POST['UpdateBy'])) {
 				echo 'UpdateBy empty';
 			} else {
@@ -15,7 +15,7 @@
 				//Mendapatkan Nilai Variable
 				date_default_timezone_set('Asia/Jakarta');
 				$UpdateTimeEngine = date("Y-m-d H:i:s");
-				
+
 				//Pembuatan Syntax SQL
 				$sql = "INSERT INTO tbl_control (control_name,control_status,update_time,updated_by) VALUES ('$ControlNameEngine','$ControlStatusEngine','$UpdateTimeEngine','$UpdateBy')";
 				//Import File Koneksi databaset
