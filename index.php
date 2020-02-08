@@ -1,0 +1,3 @@
+<?
+	echo "Initialize Application";
+?>
