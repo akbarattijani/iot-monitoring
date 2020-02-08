@@ -1,9 +1,9 @@
 <?php 
 	if($_SERVER['REQUEST_METHOD']=='POST'){
 		try {
-			if (isset($_POST['EmailAddress'])) {
+			if (empty($_POST['EmailAddress'])) {
 				echo 'Email Address empty';
-			} else if (isset($_POST['UpdateBy'])) {
+			} else if (empty($_POST['UpdateBy'])) {
 				echo 'UpdateBy empty';
 			} else {
 				$EmailAddress = $_POST['EmailAddress'];
