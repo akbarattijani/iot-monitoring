@@ -1,6 +1,5 @@
 <?php 
-	if($_SERVER['REQUEST_METHOD']=='POST')
-	{
+	if($_SERVER['REQUEST_METHOD']=='POST' && isset($_POST['EmailAddress']) && isset($_POST['UpdateBy']){
 		//Mendapatkan Nilai Variable
 		date_default_timezone_set('Asia/Jakarta');
 		
@@ -22,5 +21,7 @@
 			echo 'Failed';
 		}
 		pg_close($con);
+	} else {
+		echo 'Failed Insert';
 	}
 ?>
