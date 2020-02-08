@@ -5,8 +5,11 @@
 		} else if (isset($_POST['UpdateBy'])) {
 			echo 'UpdateBy empty';
 		} else {
-			$EmailAddress = $_POST['EmailAddress'];
-			$UpdateBy = $_POST['UpdateBy'];
+			$parts = parse_url($url);
+			parse_str($parts['query'], $query);
+			
+			$EmailAddress = $query['EmailAddress'];
+			$UpdateBy = $query['UpdateBy'];
 			
 			//Mendapatkan Nilai Variable
 			date_default_timezone_set('Asia/Jakarta');
@@ -19,7 +22,7 @@
 			//Eksekusi Query database
 			if(pg_query($con,$sql))
 			{
-				echo 'Success' + $_SERVER['QUERY_STRING'];
+				echo 'Success';
 			}
 			else
 			{
