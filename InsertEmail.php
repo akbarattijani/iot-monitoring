@@ -13,7 +13,7 @@
 		//Import File Koneksi databaset
 		require_once('koneksi.php');
 		//Eksekusi Query database
-		if(mysqli_query($con,$sql))
+		if(pg_query($con,$sql))
 		{
 			echo 'Success';
 		}
@@ -21,6 +21,6 @@
 		{
 			echo 'Failed';
 		}
-		mysqli_close($con);
+		pg_close($con);
 	}
 ?>

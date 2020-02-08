@@ -10,11 +10,11 @@
 	$sql = "SELECT * FROM tbl_control WHERE control_name='Alarm' ORDER BY update_time DESC LIMIT 1";
 	
 	//Mendapatkan Hasil 
-	$r = mysqli_query($con,$sql);
+	$r = pg_query($con,$sql);
 	
 	//Memasukkan Hasil Kedalam Array
 	$result = array();
-	$row = mysqli_fetch_array($r);
+	$row = pg_fetch_array($r);
 	array_push($result,array(
 			"ControlCodeAlarm"=>$row['control_code'],
 			"ControlNameAlarm"=>$row['control_name'],
@@ -25,5 +25,5 @@
 	//Menampilkan dalam format JSON
 	echo json_encode(array('result'=>$result));
 	
-	mysqli_close($con);
+	pg_close($con);
 ?>
