@@ -1,10 +1,7 @@
 <?php 
-	if($_SERVER['REQUEST_METHOD']=='POST')
-	{
+	if($_SERVER['REQUEST_METHOD']=='POST') {
 		if (empty($_POST['ControlNameEngine'])) {
 			echo 'ControlNameEngine empty';
-		} else if (empty($_POST['ControlStatusEngine'])) {
-			echo 'ControlStatusEngine empty';
 		} else if (empty($_POST['UpdateBy'])) {
 			echo 'UpdateBy empty';
 		} else {
